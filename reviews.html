@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Отзывы и контакты - Трекер привычек</title>
+
+  <script src="scripts/mobile-menu.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              indigo: '#4F46E5',
+              light: '#EEF2FF'
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-sans text-gray-900 antialiased bg-gray-50 flex flex-col min-h-screen">
+
+  <!-- Хедер -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur shadow-sm">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 text-xl font-semibold text-brand-indigo">
+        Трекер привычек
+      </a>
+      
+      <nav class="hidden md:flex gap-8 text-sm">
+        <a href="index.html#about" class="hover:text-brand-indigo transition-colors">О сервисе</a>
+        <a href="index.html#how-it-works" class="hover:text-brand-indigo transition-colors">Как это работает</a>
+        <a href="index.html#features" class="hover:text-brand-indigo transition-colors">Преимущества</a>
+        <a href="reviews.html" class="hover:text-brand-indigo transition-colors">Отзывы и контакты</a>
+        <a href="404.html" class="hover:text-brand-indigo transition-colors">Тест 404</a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <a href="#signup"
+           class="hidden md:inline-flex px-4 py-2 rounded-full bg-brand-indigo text-white text-sm font-medium hover:bg-indigo-700 transition">
+          Войти
+        </a>
+
+        <button id="menu-btn" class="md:hidden text-gray-600 focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/center/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full left-0 shadow-lg">
+      <nav class="flex flex-col p-6 gap-4 text-base font-medium">
+        <a href="index.html#about" class="mobile-link hover:text-brand-indigo">О сервисе</a>
+        <a href="index.html#how-it-works" class="mobile-link hover:text-brand-indigo">Как это работает</a>
+        <a href="index.html#features" class="mobile-link hover:text-brand-indigo">Преимущества</a>
+        <a href="reviews.html" class="mobile-link hover:text-brand-indigo">Отзывы и контакты</a>
+        <a href="404.html" class="mobile-link hover:text-brand-indigo">Тест 404</a>
+        <hr>
+        <a href="#signup" class="mobile-link text-brand-indigo">Войти</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-grow pt-32 pb-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <h1 class="text-3xl md:text-4xl font-bold text-center mb-12">Свяжитесь с нами</h1>
+
+      <div class="grid md:grid-cols-2 gap-12 bg-white rounded-2xl shadow-sm overflow-hidden p-8 md:p-12">
+        
+        <div class="space-y-6">
+          <h2 class="text-2xl font-bold mb-4">Оставьте отзыв</h2>
+          <form class="space-y-4" onsubmit="event.preventDefault(); alert('Спасибо за отзыв!');">
+            
+            <div>
+              <label class="block text-sm font-medium mb-1 text-gray-700">Имя</label>
+              <input type="text" required placeholder="Ваше имя"
+                     class="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-indigo focus:border-transparent">
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium mb-1 text-gray-700">Email</label>
+              <input type="email" required placeholder="example@email.com"
+                     class="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-indigo focus:border-transparent">
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium mb-1 text-gray-700">Тема</label>
+              <select required
+                      class="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-indigo focus:border-transparent bg-white">
+                <option value="" disabled selected>Выберите тему</option>
+                <option>Предложение</option>
+                <option>Жалоба</option>
+                <option>Вопрос</option>
+                <option>Благодарность</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium mb-1 text-gray-700">Сообщение</label>
+              <textarea required rows="5" placeholder="Ваше сообщение..."
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-indigo focus:border-transparent"></textarea>
+            </div>
+
+            <div class="flex items-start">
+                <input id="consent" type="checkbox" required class="mt-1 h-4 w-4 text-brand-indigo border-gray-300 rounded focus:ring-brand-indigo">
+                <label for="consent" class="ml-2 block text-sm text-gray-500">
+                    Соглашаюсь на обработку персональных данных
+                </label>
+            </div>
+
+            <button type="submit"
+                    class="w-full px-6 py-3 rounded-lg bg-brand-indigo text-white font-semibold shadow-md hover:bg-indigo-700 hover:-translate-y-0.5 transition duration-200">
+              Отправить отзыв
+            </button>
+          </form>
+        </div>
+
+        <div class="space-y-8 md:border-l md:border-gray-100 md:pl-12">
+            <div>
+                <h2 class="text-2xl font-bold mb-6">Контакты</h2>
+                <p class="text-gray-600 mb-6">
+                    Мы всегда рады обратной связи. Если у вас возникли вопросы по работе сервиса или есть предложения по улучшению, напишите или позвоните нам.
+                </p>
+            </div>
+
+            <div class="space-y-6">
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-full bg-brand-light text-brand-indigo flex items-center justify-center flex-shrink-0">
+                        📍
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-900">Адрес</h3>
+                        <p class="text-gray-600">г. Москва</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-full bg-brand-light text-brand-indigo flex items-center justify-center flex-shrink-0">
+                        📞
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-900">Телефон</h3>
+                        <p class="text-gray-600">+7 (999) 123-45-67</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-full bg-brand-light text-brand-indigo flex items-center justify-center flex-shrink-0">
+                        ✉️
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-900">Email</h3>
+                        <p class="text-gray-600">email@example.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Футер -->
+  <footer class="bg-gray-900 text-gray-300 py-10">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-5 gap-8 text-sm">
+      <div class="md:col-span-2">
+        <div class="text-white text-lg font-semibold mb-3">Трекер привычек</div>
+        <p class="text-gray-400">
+          Минималистичный трекер привычек, который помогает замечать прогресс и не бросать начатое.
+        </p>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold mb-3">Навигация</h3>
+        <ul class="space-y-2">
+          <li><a href="index.html#about" class="hover:text-brand-indigo transition">О сервисе</a></li>
+          <li><a href="index.html#how-it-works" class="hover:text-brand-indigo transition">Как это работает</a></li>
+          <li><a href="index.html#features" class="hover:text-brand-indigo transition">Преимущества</a></li>
+          <li><a href="reviews.html" class="hover:text-brand-indigo transition">Отзывы и контакты</a></li>
+          <li><a href="404.html" class="hover:text-brand-indigo transition">Тест 404</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold mb-3">Контакты</h3>
+        <ul class="space-y-2">
+          <li>email@example.com</li>
+          <li>+7 (999) 123-45-67</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold mb-3">Соцсети</h3>
+        <div class="flex gap-3">
+          <a href="#" class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center hover:bg-brand-indigo transition">TG</a>
+          <a href="#" class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center hover:bg-brand-indigo transition">VK</a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-gray-800 mt-8 pt-4 text-center text-xs text-gray-500">
+      &copy; 2026 Трекер привычек. Все права защищены.
+    </div>
+  </footer>
+
+</body>
+</html>

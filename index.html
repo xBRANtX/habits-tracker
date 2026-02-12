@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Трекер привычек</title>
 
-  <!-- Tailwind CSS CDN -->
+  <script src="scripts/mobile-menu.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -30,15 +30,39 @@
       <a href="#" class="flex items-center gap-2 text-xl font-semibold text-brand-indigo">
         Трекер привычек
       </a>
+      
       <nav class="hidden md:flex gap-8 text-sm">
-        <a href="#about" class="hover:text-brand-indigo transition-colors">О сервисе</a>
-        <a href="#how-it-works" class="hover:text-brand-indigo transition-colors">Как это работает</a>
-        <a href="#features" class="hover:text-brand-indigo transition-colors">Преимущества</a>
+        <a href="index.html#about" class="hover:text-brand-indigo transition-colors">О сервисе</a>
+        <a href="index.html#how-it-works" class="hover:text-brand-indigo transition-colors">Как это работает</a>
+        <a href="index.html#features" class="hover:text-brand-indigo transition-colors">Преимущества</a>
+        <a href="reviews.html" class="hover:text-brand-indigo transition-colors">Отзывы и контакты</a>
+        <a href="404.html" class="hover:text-brand-indigo transition-colors">Тест 404</a>
       </nav>
-      <a href="#signup"
-         class="hidden md:inline-flex px-4 py-2 rounded-full bg-brand-indigo text-white text-sm font-medium hover:bg-indigo-700 transition">
-        Начать сегодня
-      </a>
+
+      <div class="flex items-center gap-4">
+        <a href="#signup"
+           class="hidden md:inline-flex px-4 py-2 rounded-full bg-brand-indigo text-white text-sm font-medium hover:bg-indigo-700 transition">
+          Войти
+        </a>
+
+        <button id="menu-btn" class="md:hidden text-gray-600 focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/center/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full left-0 shadow-lg">
+      <nav class="flex flex-col p-6 gap-4 text-base font-medium">
+        <a href="index.html#about" class="mobile-link hover:text-brand-indigo">О сервисе</a>
+        <a href="index.html#how-it-works" class="mobile-link hover:text-brand-indigo">Как это работает</a>
+        <a href="index.html#features" class="mobile-link hover:text-brand-indigo">Преимущества</a>
+        <a href="reviews.html" class="mobile-link hover:text-brand-indigo">Отзывы и контакты</a>
+        <a href="404.html" class="mobile-link hover:text-brand-indigo">Тест 404</a>
+        <hr>
+        <a href="#signup" class="mobile-link text-brand-indigo">Войти</a>
+      </nav>
     </div>
   </header>
 
@@ -250,12 +274,22 @@
 
   <!-- Футер -->
   <footer class="bg-gray-900 text-gray-300 py-10">
-    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-8 text-sm">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-5 gap-8 text-sm">
       <div class="md:col-span-2">
         <div class="text-white text-lg font-semibold mb-3">Трекер привычек</div>
         <p class="text-gray-400">
           Минималистичный трекер привычек, который помогает замечать прогресс и не бросать начатое.
         </p>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold mb-3">Навигация</h3>
+        <ul class="space-y-2">
+          <li><a href="index.html#about" class="hover:text-brand-indigo transition">О сервисе</a></li>
+          <li><a href="index.html#how-it-works" class="hover:text-brand-indigo transition">Как это работает</a></li>
+          <li><a href="index.html#features" class="hover:text-brand-indigo transition">Преимущества</a></li>
+          <li><a href="reviews.html" class="hover:text-brand-indigo transition">Отзывы и контакты</a></li>
+          <li><a href="404.html" class="hover:text-brand-indigo transition">Тест 404</a></li>
+        </ul>
       </div>
       <div>
         <h3 class="text-white font-semibold mb-3">Контакты</h3>

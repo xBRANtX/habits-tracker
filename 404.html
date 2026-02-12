@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Страница не найдена - 404</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              indigo: '#4F46E5',
+              light: '#EEF2FF'
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-brand-light flex items-center justify-center min-h-screen p-6">
+  
+  <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12 text-center max-w-lg mx-auto">
+    <div class="text-brand-indigo text-9xl font-bold mb-4">404</div>
+    <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+        Страница не найдена
+    </h1>
+    <p class="text-gray-600 mb-8 leading-relaxed">
+        Возможно, эта страница была удалена, перемещена или вы просто ошиблись при наборе адреса. Не расстраивайтесь, это не повод нарушать свои привычки!
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="index.html"
+           class="inline-flex justify-center items-center px-6 py-3 rounded-lg bg-brand-indigo text-white font-semibold hover:bg-indigo-700 transition">
+            Вернуться на главную
+        </a>
+        <a href="reviews.html"
+           class="inline-flex justify-center items-center px-6 py-3 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 transition">
+            Написать нам
+        </a>
+    </div>
+  </div>
+
+</body>
+</html>
